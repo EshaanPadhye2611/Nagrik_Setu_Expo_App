@@ -224,7 +224,7 @@ function IssueCard({ issue, index, onUploaded, coords }: { issue: any; index: nu
       } as any);
       if (coords?.latitude) formData.append("latitude", String(coords.latitude));
       if (coords?.longitude) formData.append("longitude", String(coords.longitude));
-      await api.post(`/api/departments/worker/issues/${issue.id}/resolve/`, formData, {
+      await api.post(`/api/dept/worker/issues/${issue.id}/resolve/`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       Alert.alert("Success", "Image uploaded — AI verification in progress!");
@@ -500,7 +500,7 @@ export default function WorkerDashboard() {
     if (manual) { setRefreshing(true); spinRefresh(); }
     else if (!silent) setLoading(true);
     try {
-      const res = await api.get("/api/departments/worker/my-issues/");
+      const res = await api.get("/api/dept/worker/my-issues/");
       const data = Array.isArray(res.data) ? res.data : [];
       setIssues(data);
       setLastSync(new Date());

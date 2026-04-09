@@ -624,69 +624,7 @@ export default function Report() {
             <View style={styles.divider} />
 
             {/* Location preview card — read-only display of resolved area */}
-            <View style={styles.sectionHeader}>
-              <View style={[styles.sectionBadge, { backgroundColor: "#e8f5e9" }]}>
-                <Ionicons name="navigate" size={16} color="#2e7d32" />
-              </View>
-              <Text style={styles.sectionTitle}>Reporting Area</Text>
-            </View>
-
-            <View style={styles.areaCard}>
-              {locationResolving ? (
-                <View style={styles.areaRow}>
-                  <ActivityIndicator size="small" color="#2e7d32" style={{ marginRight: 10 }} />
-                  <Text style={styles.areaDetecting}>Detecting your ward…</Text>
-                </View>
-              ) : wardInfo || corpInfo ? (
-                <View style={styles.areaRow}>
-                  {/* Municipal Corp pill */}
-                  {corpInfo && (
-                    <View style={styles.areaPill}>
-                      <View style={[styles.areaPillIcon, { backgroundColor: "#1565c0" }]}>
-                        <Ionicons name="business" size={12} color="#fff" />
-                      </View>
-                      <View>
-                        <Text style={styles.areaPillLabel}>Municipal Corp</Text>
-                        <Text style={styles.areaPillValue} numberOfLines={1}>{corpInfo.name}</Text>
-                      </View>
-                    </View>
-                  )}
-
-                  {corpInfo && wardInfo && <View style={styles.areaDivider} />}
-
-                  {/* Ward pill */}
-                  {wardInfo && (
-                    <View style={styles.areaPill}>
-                      <View style={[styles.areaPillIcon, { backgroundColor: "#2e7d32" }]}>
-                        <Ionicons name="location" size={12} color="#fff" />
-                      </View>
-                      <View>
-                        <Text style={styles.areaPillLabel}>Ward</Text>
-                        <Text style={styles.areaPillValue} numberOfLines={1}>{wardInfo.name}</Text>
-                      </View>
-                    </View>
-                  )}
-
-                  {/* GPS indicator */}
-                  <View style={styles.areaGps}>
-                    <View style={styles.areaGpsDot} />
-                    <Text style={styles.areaGpsText}>GPS</Text>
-                  </View>
-                </View>
-              ) : locationError ? (
-                <View style={styles.areaRow}>
-                  <Ionicons name="warning-outline" size={16} color="#e53935" style={{ marginRight: 8 }} />
-                  <Text style={[styles.areaDetecting, { color: "#c62828" }]}>{locationError}</Text>
-                </View>
-              ) : (
-                <View style={styles.areaRow}>
-                  <View style={styles.areaGpsDot} />
-                  <Text style={styles.areaDetecting}>GPS location will be captured on submit</Text>
-                </View>
-              )}
-            </View>
-
-            <View style={styles.divider} />
+           
 
             {/* Submit */}
             <Animated.View style={{ transform: [{ scale: btnScale }] }}>

@@ -3,7 +3,7 @@ import * as Location from "expo-location";
 import axios from "axios";
 import { Platform } from "react-native";
 
-const BASE_URL = "https://uneconomic-bernita-frontlessly.ngrok-free.dev" // Update with your backend URL
+const BASE_URL = "https://de22-2409-40c0-102b-2a5e-d499-2868-ffec-ac92.ngrok-free.app"; // Update with your backend URL
 
 const LocationContext = createContext(null);
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as SecureStore from 'expo-secure-store';
 
-export const BASE_URL = "https://uneconomic-bernita-frontlessly.ngrok-free.dev";
+export const BASE_URL = "https://de22-2409-40c0-102b-2a5e-d499-2868-ffec-ac92.ngrok-free.app/";
 
 const api = axios.create({
   baseURL: BASE_URL,
